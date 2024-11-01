@@ -8,7 +8,9 @@ const server = http.createServer((req, res) => {
 		if (err) {
 			res.setHeader("Content-Type", "text/html");
 			return res.end(
-				fs.readFile("404.html", (err, _404page) => _404page),
+				fs.readFile("404.html", (err, _404page) => {
+					return _404page;
+				}),
 			);
 		}
 		res.setHeader("Content-Type", "text/html");
