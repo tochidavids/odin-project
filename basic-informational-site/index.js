@@ -4,11 +4,12 @@ const url = require("url");
 
 const server = http.createServer((req, res) => {
 	const q = url.parse(req.url, true);
-	console.log("q:", q);
 	fs.readFile(`.${q.pathname}.html`, (err, html) => {
 		if (err) {
 			res.setHeader("Content-Type", "text/html");
-			return res.end(fs.readFile('404.html', (err, _404page) => _404page));
+			return res.end(
+				fs.readFile("404.html", (err, _404page) => _404page),
+			);
 		}
 		res.setHeader("Content-Type", "text/html");
 		res.end(html);
