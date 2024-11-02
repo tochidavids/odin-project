@@ -36,7 +36,6 @@ app.route("/new")
 	});
 
 app.get("/message/:id", (req, res) => {
-	console.log("message:", messages[Number(req.params.id)]);
 	res.render("message", { message: messages[Number(req.params.id)] });
 });
 
