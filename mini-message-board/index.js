@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-app.set("views", "./views");
+app.set("views", "./src/views");
 app.set("view engine", "ejs");
 
 const messages = [
@@ -18,7 +18,7 @@ const messages = [
 ];
 
 app.get("/", (req, res) => {
-	res.send("hello world!");
+	res.render("index", { title: "Mini Messageboard", messages: messages });
 });
 
 app.post("/new", (req, res) => {});
