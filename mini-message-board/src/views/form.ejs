@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>New Message</title>
+	</head>
+	<body>
+		<%- include('./components/header') %>
+		<h2>Send a New Message</h2>
+		<form method="post" action="/new">
+			<input type="text" name="user" placeholder="Name" />
+			<textarea name="text" placeholder="Write anything..."></textarea>
+			<button type="submit">Submit</button>
+		</form>
+	</body>
+</html>
