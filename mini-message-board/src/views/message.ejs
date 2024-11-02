@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Messages</title>
+	</head>
+	<body>
+		<%- include('./components/header.ejs') %>
+		<main class="message">
+			<div class="message">
+				<h2>Message from <%- locals.message.user %></h3>
+				<p><%- locals.message.text %></p>
+				<i>Sent on <b><%- locals.message.added %></b></i>
+			</div>
+		</main>
+	</body>
+</html>

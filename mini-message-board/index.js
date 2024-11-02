@@ -35,4 +35,9 @@ app.route("/new")
 		res.redirect("/");
 	});
 
+app.get("/message/:id", (req, res) => {
+	console.log("message:", messages[Number(req.params.id)]);
+	res.render("message", { message: messages[Number(req.params.id)] });
+});
+
 app.listen(3000);
